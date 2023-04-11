@@ -1,4 +1,4 @@
-// toggle icon navbar
+/*========================= toggle icon navbar =========================*/
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
@@ -7,7 +7,7 @@ menuIcon.onclick = () => {
     navbar.classList.toggle('active');
 };
 
-// scroll sections active link
+/*========================= scroll sections active link =========================*/
 
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
@@ -24,19 +24,20 @@ window.onscroll = () => {
                 links.classList.remove('active');
                 document.querySelector('header nav a[href*=]' + id + ']').classList.add('active');
             });
-        };
+        }
     });
-    // sticky navbar
+
+    /*========================= sticky navbar =========================*/
     let header = document.querySelector('header');
 
     header.classList.toggle('sticky', window.scrollY > 100);
 
-    // remove toggle icon and navbar when click navbar link (scroll)
+    /*========================= remove toggle icon and navbar when click navbar link (scroll) =========================*/
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
 };
 
-// scroll reveal
+/*========================= scroll reveal =========================*/
 ScrollReveal({
     // reset: true,
     distance: '80px',
@@ -49,7 +50,7 @@ ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact 
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
-// typed js
+/*========================= typed js =========================*/
 
 const typed = new Typed('.multiple-text', {
     strings: ['Frontend Developer', 'Graphic Designer', 'YouTuber'],
