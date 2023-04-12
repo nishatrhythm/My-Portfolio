@@ -57,6 +57,11 @@ section {
     cursor: default;
 }
 
+.logo:hover {
+    color: var(--main-color);
+    font-weight: 800;
+}
+
 .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
@@ -67,6 +72,7 @@ section {
 .navbar a:hover,
 .navbar a.active {
     color: var(--main-color);
+    font-weight: 600;
 }
 
 #menu-icon {
