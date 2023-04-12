@@ -176,24 +176,24 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>
 
-        <form action="#">
+        <form action="https://formspree.io/f/xwkjwrne" method="POST">
             <div class="input-box">
-                <input type="text" placeholder="Full Name" id="fullName" disabled>
-                <input type="number" placeholder="Mobile Number" id="mobileNumber" disabled>
+                <input type="text" name="Full Name" placeholder="Full Name" id="fullName" required>
+                <input type="number" name="Mobile Number" placeholder="Mobile Number" id="mobileNumber" required>
             </div>
             <div class="input-box">
-                <input type="email" placeholder="Email Address" id="emailAddress" disabled>
-                <input type="text" placeholder="Email Subject" id="emailSubject" disabled>
+                <input type="email" name="Email Address" placeholder="Email Address" id="emailAddress" required>
+                <input type="text" name="Email Subject" placeholder="Email Subject" id="emailSubject" required>
             </div>
-            <textarea name="" id="yourMessage" cols="30" rows="10" placeholder="Your Message" disabled></textarea>
-            <input type="submit" value="Send Message" class="btn" disabled>
+            <textarea name="Message Body" id="yourMessage" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <input type="submit" name="SEND MESSAGE" value="SEND MESSAGE" class="btn">
         </form>
     </section>
 
     <!-- footer design -->
     <footer class="footer">
         <div class="footer-text">
-            <p>Copyright &copy; 2023 | Designed by Nishat Mahmud | All Rights Reserved</p>
+            <p>Copyright &copy; 2023 | Designed and Maintenance by Nishat Mahmud | All Rights Reserved</p>
         </div>
 
         <div class="footer-iconTop">
@@ -209,9 +209,6 @@
 
     <!-- custom js -->
     <script src="script.js"></script>
-
-    <!-- smtpjs script for form submission -->
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 </body>
 
