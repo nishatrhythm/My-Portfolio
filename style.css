@@ -292,11 +292,13 @@ span {
 
 .portfolio-layer h4 {
     font-size: 3rem;
+    color: var(--text-color);
 }
 
 .portfolio-layer p {
     font-size: 1.6rem;
     margin: .3rem 0 1rem;
+    color: var(--second-bg-color);
 }
 
 .portfolio-layer a {
