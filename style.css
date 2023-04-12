@@ -381,6 +381,16 @@ span {
     color: var(--second-bg-color);
 }
 
+::-moz-selection { /* Code for Firefox */
+    color: var(--second-bg-color);
+    background: var(--main-color);
+  }
+  
+::selection {
+    color: var(--second-bg-color);
+    background: var(--main-color);
+  }
+
 
 /* BREAKPOINTS */
 @media (max-width: 1200px) {
