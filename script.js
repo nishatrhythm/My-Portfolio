@@ -59,27 +59,3 @@ const typed = new Typed('.multiple-text', {
     backDelay: 1000,
     loop: true
 });
-
-/*========================= emailJS =========================*/
-function sendEmail() {
-    if (document.getElementById("fullName").value == null || document.getElementById("fullName").value == "" ||
-        document.getElementById("mobileNumber").value == null || document.getElementById("mobileNumber").value == "" ||
-        document.getElementById("emailAddress").value == null || document.getElementById("emailAddress").value == "" ||
-        document.getElementById("emailSubject").value == null || document.getElementById("emailSubject").value == "" ||
-        document.getElementById("yourMessage").value == null || document.getElementById("yourMessage").value == "") {
-        alert("Form fields can not be empty!");
-    }
-
-    else {
-        emailjs.send("service_h5y8fsf", "template_k177x27", {
-            from_name: document.getElementById("fullName").value,
-            message: "<b>Name: <b>" + document.getElementById("fullName").value
-                + "<br> <b>Mobile Number: <b>" + document.getElementById("mobileNumber").value
-                + "<br> <b>Email Address: <b>" + document.getElementById("emailAddress").value
-                + "<br> <b>Email Subject: <b>" + document.getElementById("emailSubject").value
-                + "<br> <b>Message Body: <b>" + document.getElementById("yourMessage").value,
-        }).then(function (res) {
-            alert("Success! " + res.status);
-        })
-    }
-}
