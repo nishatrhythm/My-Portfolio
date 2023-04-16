@@ -81,6 +81,7 @@ section {
 .navbar a.active {
     color: var(--main-color);
     font-weight: 600;
+    cursor: pointer;
 }
 
 #menu-icon {
