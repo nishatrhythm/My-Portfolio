@@ -37,6 +37,22 @@ window.onscroll = () => {
     navbar.classList.remove('active');
 };
 
+/*=============== swipper =====================*/
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 50,
+    loop: true,
+    grabCursor: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
+
 /*========================= scroll reveal =========================*/
 ScrollReveal({
     // reset: true,
@@ -46,7 +62,7 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form, .about-content, .about-content h2', { origin: 'bottom' });
+ScrollReveal().reveal('.home-img, .education-row, .skills-row, .services-container, .portfolio-box, .testimonial-wrapper, .contact form, .about-content, .about-content h2', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p', { origin: 'right' });
 
