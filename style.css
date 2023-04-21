@@ -748,6 +748,15 @@ span {
     font-size: 1.6rem;
 }
 
+.footer-text a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
+
 .footer-iconTop a {
     display: inline-flex;
     justify-content: center;
