@@ -516,31 +516,31 @@ span {
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span {
-    width: 80%;
+    width: 95%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span {
-    width: 65%;
-}
-
-.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span {
-    width: 30%;
-}
-
-.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span {
     width: 75%;
 }
 
+.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span {
+    width: 40%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span {
+    width: 80%;
+}
+
 .skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span {
-    width: 65%;
+    width: 80%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span {
-    width: 50%;
+    width: 65%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span {
-    width: 70%;
+    width: 85%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span {
@@ -667,7 +667,7 @@ span {
     color: var(--second-bg-color);
 }
 
-.testimonial {
+/* .testimonial {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -738,10 +738,10 @@ span {
 
 .testimonial-box .swiper-pagination-bullet-active {
     background: var(--main-color);
-}
+} */
 
 .contact {
-    background: var(--second-bg-color);
+    background: var(--bg-color);
 }
 
 .contact h2 {
@@ -767,7 +767,7 @@ span {
     padding: 1.5rem;
     font-size: 1.6rem;
     color: var(--text-color);
-    background: var(--bg-color);
+    background: var(--second-bg-color);
     border-radius: .8rem;
     margin: .7rem 0;
 }
@@ -791,6 +791,7 @@ span {
     align-items: center;
     flex-wrap: wrap;
     padding: 2rem 9%;
+    background: var(--second-bg-color);
 }
 
 .footer-text p {
