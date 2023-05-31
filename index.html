@@ -14,6 +14,12 @@
     <meta property='og:image:height' content='2520'>
 
     <title>Nishat Mahmud | Portfolio</title>
+
+    <!-- check if JavaScript is disabled from browser settings and redirect user to the non-JavaScript version of the website -->
+    <noscript>
+        <meta http-equiv="refresh" content="0;url=nonjs.html">
+    </noscript>
+
     <link rel="icon" href="images/icon.png" type="image/x-icon" sizes="30x30">
 
     <!-- swiper css -->
@@ -29,6 +35,12 @@
 <!-- <body onmousedown="return false" onselectstart="return false"> -->
 
 <body onselectstart="return false">
+
+    <!-- Initial content for users with JavaScript disabled -->
+    <div id="noscript-content">
+        <h1>Your Website (Non-JavaScript Version)</h1>
+        <p>This is the non-JavaScript version of your website.</p>
+    </div>
 
     <!-- header design -->
     <header class="header">
@@ -98,9 +110,11 @@
 
         <div class="about-content">
             <h3>Hi there! Glad to see you here.</h3>
-            <p align="justify">Greetings! My name is Nishat Mahmud, and I am a passionate technology enthusiast. I am currently pursuing
+            <p align="justify">Greetings! My name is Nishat Mahmud, and I am a passionate technology enthusiast. I am
+                currently pursuing
                 my education in the Department of Computer Science and Engineering at Jagannath University in Dhaka. I
-                have had the privilege of completing my early education at Mymensingh Zilla School and Govt. Ananda Mohon College in Mymensingh.<br><br>
+                have had the privilege of completing my early education at Mymensingh Zilla School and Govt. Ananda
+                Mohon College in Mymensingh.<br><br>
 
                 It is my utmost dedication to the field of computer science and engineering that has driven me to pursue
                 higher education and continuously expand my knowledge in this ever-evolving domain. I am committed to
