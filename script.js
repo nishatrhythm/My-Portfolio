@@ -75,3 +75,10 @@ const typed = new Typed('.multiple-text', {
     backDelay: 1000,
     loop: true
 });
+
+/*========================= right clicking disabler =========================*/
+$(document).ready(function () {
+    $("body").on("contextmenu", function (e) {
+        return false;
+    });
+});
