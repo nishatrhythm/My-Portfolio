@@ -82,3 +82,11 @@ $(document).ready(function () {
         return false;
     });
 });
+
+/*========================= Ctrl+P and Ctrl+S disabler =========================*/
+window.addEventListener('keydown', function (e) {
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 'P' || e.key === 's' || e.key === 'S')) {
+        e.preventDefault();
+        // alert("Printing is disabled on this page.");
+    }
+});
