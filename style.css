@@ -620,6 +620,7 @@ span {
 
 .portfolio-box:hover img {
     transform: scale(1.1);
+    filter: blur(4px);
 }
 
 .portfolio-box .portfolio-layer {
@@ -801,7 +802,7 @@ span {
 }
 
 .footer-text a {
-    color: var(--text-color);
+    color: var(--main-color);
     text-decoration: none;
 }
 
