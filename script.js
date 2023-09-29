@@ -1,40 +1,27 @@
-// Define the base path for image URLs
-const basePath = 'images/';
-
 // Fetch data from the JSON file
-fetch('/jsons/testimonials.json')
+fetch('/jsons/education-and-experience.json')
     .then((response) => response.json())
     .then((data) => {
-        // Function to generate HTML content for testimonials
-        const generateTestimonialContent = (testimonialData) => {
-            return testimonialData.map((testimonial) => `
-            <div class="testimonial-slide swiper-slide">
-                <img src="${testimonial.image}" alt="${testimonial.name}">
-                <h3>${testimonial.name}</h3>
-                <p>${testimonial.quote}</p>
-            </div>
-        `).join('');
+        // Function to generate HTML content for education or experience
+        const generateContent = (sectionData) => {
+            return sectionData.map((item) => `
+        <div class="education-content">
+          <div class="content">
+            <div class="year"><i class='bx bxs-calendar'></i> ${item.year}</div>
+            <h3>${item.institution || item.company} — ${item.degree || item.position}</h3>
+            <p>${item.description}</p>
+          </div>
+        </div>
+      `).join('');
         };
 
-        // Populate the testimonial section
-        const testimonialContentSection = document.getElementById('testimonialContent');
-        testimonialContentSection.innerHTML = generateTestimonialContent(data);
+        // Populate the education section
+        const educationSection = document.querySelector('.education-row .education-column:first-child .education-box');
+        educationSection.innerHTML = generateContent(data.education);
 
-        // Initialize Swiper
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            spaceBetween: 50,
-            loop: true,
-            grabCursor: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
+        // Populate the experience section
+        const experienceSection = document.querySelector('.education-row .education-column:last-child .education-box');
+        experienceSection.innerHTML = generateContent(data.experience);
     })
     .catch((error) => {
         console.error('Error loading data:', error);
@@ -47,11 +34,11 @@ fetch('/jsons/skills.json')
         // Function to generate HTML content for skills
         const generateSkillsContent = (skillsData) => {
             return skillsData.map((skill) => `
-            <div class="progress">
-                <h3>${skill.name} <span>${skill.percent}</span></h3>
-                <div class="bar"><span style="width: ${skill.percent};"></span></div>
-            </div>
-        `).join('');
+        <div class="progress">
+            <h3>${skill.name} <span>${skill.percent}</span></h3>
+            <div class="bar"><span style="width: ${skill.percent};"></span></div>
+        </div>
+    `).join('');
         };
 
         // Populate the coding skills and professional skills sections
@@ -88,34 +75,8 @@ fetch('/jsons/services.json')
         console.error('Error loading data:', error);
     });
 
-// Fetch data from the JSON file
-fetch('/jsons/education-and-experience.json')
-    .then((response) => response.json())
-    .then((data) => {
-        // Function to generate HTML content for education or experience
-        const generateContent = (sectionData) => {
-            return sectionData.map((item) => `
-        <div class="education-content">
-          <div class="content">
-            <div class="year"><i class='bx bxs-calendar'></i> ${item.year}</div>
-            <h3>${item.institution || item.company} — ${item.degree || item.position}</h3>
-            <p>${item.description}</p>
-          </div>
-        </div>
-      `).join('');
-        };
-
-        // Populate the education section
-        const educationSection = document.querySelector('.education-row .education-column:first-child .education-box');
-        educationSection.innerHTML = generateContent(data.education);
-
-        // Populate the experience section
-        const experienceSection = document.querySelector('.education-row .education-column:last-child .education-box');
-        experienceSection.innerHTML = generateContent(data.experience);
-    })
-    .catch((error) => {
-        console.error('Error loading data:', error);
-    });
+// Define the base path for image URLs
+const basePath = 'images/';
 
 // Function to create a portfolio box element
 function createPortfolioBox(item) {
@@ -174,6 +135,16 @@ function loadPortfolioItems() {
                 const portfolioBox = createPortfolioBox(item);
                 portfolioContainer.appendChild(portfolioBox);
             });
+
+            // Initialize ScrollReveal after content is loaded
+            ScrollReveal({
+                distance: '80px',
+                duration: 2000,
+                delay: 200
+            });
+
+            // Add the ScrollReveal configuration for the portfolio items
+            ScrollReveal().reveal('.portfolio-box', { origin: 'bottom' });
         })
         .catch((error) => {
             console.error('Error loading portfolio data.', error);
@@ -181,7 +152,70 @@ function loadPortfolioItems() {
 }
 
 // Call the function to load portfolio items when the page loads
-window.addEventListener('load', loadPortfolioItems);
+window.addEventListener('load', () => {
+    // Check if the URL contains the #contact anchor
+    if (window.location.hash !== '#contact') {
+        loadPortfolioItems();
+    }
+});
+
+// Fetch data from the JSON file
+// fetch('/jsons/testimonials.json')
+//     .then((response) => response.json())
+//     .then((data) => {
+//         // Function to generate HTML content for testimonials
+//         const generateTestimonialContent = (testimonialData) => {
+//             return testimonialData.map((testimonial) => `
+//             <div class="testimonial-slide swiper-slide">
+//                 <img src="${testimonial.image}" alt="${testimonial.name}">
+//                 <h3>${testimonial.name}</h3>
+//                 <p>${testimonial.quote}</p>
+//             </div>
+//         `).join('');
+//         };
+
+//         // Populate the testimonial section
+//         const testimonialContentSection = document.getElementById('testimonialContent');
+//         testimonialContentSection.innerHTML = generateTestimonialContent(data);
+
+//         // Initialize Swiper
+//         var swiper = new Swiper(".mySwiper", {
+//             slidesPerView: 1,
+//             spaceBetween: 50,
+//             loop: true,
+//             grabCursor: true,
+//             pagination: {
+//                 el: ".swiper-pagination",
+//                 clickable: true,
+//             },
+//             navigation: {
+//                 nextEl: ".swiper-button-next",
+//                 prevEl: ".swiper-button-prev",
+//             },
+//         });
+//     })
+//     .catch((error) => {
+//         console.error('Error loading data:', error);
+//     });
+
+// Function to load the contact form and initialize ScrollReveal
+function loadContactForm() {
+    const contactForm = document.querySelector('.contact form');
+
+    // Initialize ScrollReveal after content is loaded
+    ScrollReveal({
+        // reset: true,
+        distance: '80px',
+        duration: 2000,
+        delay: 200
+    });
+
+    // Add the ScrollReveal configuration for the contact form
+    ScrollReveal().reveal(contactForm, { origin: 'bottom' });
+}
+
+// Call the function to load the contact form and initialize ScrollReveal
+window.addEventListener('load', loadContactForm);
 
 /*========================= toggle icon navbar =========================*/
 let menuIcon = document.querySelector('#menu-icon');
@@ -223,20 +257,20 @@ window.onscroll = () => {
 };
 
 /*=============== swipper =====================*/
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 50,
-    loop: true,
-    grabCursor: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-});
+// var swiper = new Swiper(".mySwiper", {
+//     slidesPerView: 1,
+//     spaceBetween: 50,
+//     loop: true,
+//     grabCursor: true,
+//     pagination: {
+//         el: ".swiper-pagination",
+//         clickable: true,
+//     },
+//     navigation: {
+//         nextEl: ".swiper-button-next",
+//         prevEl: ".swiper-button-prev",
+//     },
+// });
 
 /*========================= scroll reveal =========================*/
 ScrollReveal({
@@ -247,7 +281,7 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .education-row, .skills-row, .services-container, .portfolio-box, .testimonial-wrapper, .contact form, .about-content, .about-content h2', { origin: 'bottom' });
+ScrollReveal().reveal('.home-img, .education-row, .skills-row, .services-container, .testimonial-wrapper, .about-content, .about-content h2', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p', { origin: 'right' });
 
