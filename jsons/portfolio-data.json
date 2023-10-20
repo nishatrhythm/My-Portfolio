@@ -54,6 +54,12 @@
         "link": "https://github.com/nishatrhythm/Book-Like-Portfolio-Website"
     },
     {
+        "name": "Weather App Using Public API",
+        "description": "This is a web-based weather app using public OpenWeatherMap API.",
+        "image": "portfolio24.jpg",
+        "link": "https://github.com/nishatrhythm/Weather-App-Using-API"
+    },
+    {
         "name": "Analog Clock Using HTML CSS JS",
         "description": "This is a simple analog clock using HTML, CSS and JavaScript.",
         "image": "portfolio22.jpg",
